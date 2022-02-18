@@ -411,7 +411,7 @@ def update_timestamp_offset(serial):
 # ------------------- #
 
 
-class _SystemEventHandler(PySpin.InterfaceEvent):
+class _SystemEventHandler(PySpin.InterfaceEventHandler):
     """ This class handles when cameras are added or removed """
 
     def __init__(self):
@@ -445,7 +445,7 @@ def _constructor():
     _SYSTEM_EVENT_HANDLER = _SystemEventHandler()
 
     # Register event handler
-    _SYSTEM.RegisterInterfaceEvent(_SYSTEM_EVENT_HANDLER)
+    _SYSTEM.RegisterInterfaceEventHandler(_SYSTEM_EVENT_HANDLER)
 
     # cams should clear itself after going out of scope
 
